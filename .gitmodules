@@ -1,0 +1,3 @@
+[submodule "styles"]
+	path = styles
+	url = git@github.com:RafaelPuello/digidex-static-assets.git
