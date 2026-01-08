@@ -1,0 +1,1042 @@
+/* Primary Color - Deep Teal */
+/* hsl(168, 100%, 21%) */
+/* Darker shade for accents */
+/* Secondary Color - Soft Green */
+/* Hover states */
+/* Active states */
+/* UI highlights over dark backgrounds */
+/* UI highlights over dark text */
+/* Backgrounds */
+/* Additional Secondary Colors */
+/* hsl(213, 56%, 47%) */
+/* hsl(353, 61%, 56%) */
+/* Positive Messages - Vibrant Green */
+/* hsl(134, 61%, 41%) */
+/* Background for positive states */
+/* Information Messages - Calm Blue */
+/* hsl(188, 71%, 41%) */
+/* Background for information messages */
+/* Warning Messages - Soft Amber */
+/* hsl(45, 100%, 50%) */
+/* Background for warnings */
+/* Critical Messages - Strong Red */
+/* hsl(354, 70%, 47%) */
+/* Background for critical states */
+/* Background only */
+:root {
+	--white: white;
+	--background: #f4fdf8;
+	--foreground: var(--white);
+	--border: rgba(0, 105, 62, 0.2);
+	--heading: #083629;
+	--paragraph: rgba(8, 54, 41, 0.8);
+	--accent-a1: #00693e;
+	--accent-b1: rgba(0, 105, 62, 0.07);
+	--accent-c1: rgba(0, 105, 62, 0.0509803922);
+	--accent-d1: #38b47c;
+	--accent-e1: rgba(0, 105, 62, 0.2);
+	--accent-f1: #e4f2e7;
+	--accent-g1: #0f2117;
+	--accent-h1: rgba(15, 33, 23, 0.6);
+	--accent-a2: #bc0087;
+	--accent-b2: rgba(188, 0, 135, 0.0705882353);
+	--accent-a3: #3959ff;
+	--accent-b3: rgba(57, 89, 255, 0.0705882353);
+	--accent-h3: rgba(20, 23, 24, 0.6);
+	--accent-a4: #eadb5b;
+	--font-sans: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1f18;
+    --foreground: #49514d;
+
+    --border: rgba(165, 255, 205, 0.15);
+    --heading: #d4f8e5;
+    --paragraph: rgba(212, 248, 229, 0.85);
+  }
+}*/
+/* -----------------------------------
+   Theme maps
+----------------------------------- */
+/* Primary Color - Deep Teal */
+/* hsl(168, 100%, 21%) */
+/* Darker shade for accents */
+/* Secondary Color - Soft Green */
+/* Hover states */
+/* Active states */
+/* UI highlights over dark backgrounds */
+/* UI highlights over dark text */
+/* Backgrounds */
+/* Additional Secondary Colors */
+/* hsl(213, 56%, 47%) */
+/* hsl(353, 61%, 56%) */
+/* Positive Messages - Vibrant Green */
+/* hsl(134, 61%, 41%) */
+/* Background for positive states */
+/* Information Messages - Calm Blue */
+/* hsl(188, 71%, 41%) */
+/* Background for information messages */
+/* Warning Messages - Soft Amber */
+/* hsl(45, 100%, 50%) */
+/* Background for warnings */
+/* Critical Messages - Strong Red */
+/* hsl(354, 70%, 47%) */
+/* Background for critical states */
+/* Background only */
+:root {
+	--white: white;
+	--background: #f4fdf8;
+	--foreground: var(--white);
+	--border: rgba(0, 105, 62, 0.2);
+	--heading: #083629;
+	--paragraph: rgba(8, 54, 41, 0.8);
+	--accent-a1: #00693e;
+	--accent-b1: rgba(0, 105, 62, 0.07);
+	--accent-c1: rgba(0, 105, 62, 0.0509803922);
+	--accent-d1: #38b47c;
+	--accent-e1: rgba(0, 105, 62, 0.2);
+	--accent-f1: #e4f2e7;
+	--accent-g1: #0f2117;
+	--accent-h1: rgba(15, 33, 23, 0.6);
+	--accent-a2: #bc0087;
+	--accent-b2: rgba(188, 0, 135, 0.0705882353);
+	--accent-a3: #3959ff;
+	--accent-b3: rgba(57, 89, 255, 0.0705882353);
+	--accent-h3: rgba(20, 23, 24, 0.6);
+	--accent-a4: #eadb5b;
+	--font-sans: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1f18;
+    --foreground: #49514d;
+
+    --border: rgba(165, 255, 205, 0.15);
+    --heading: #d4f8e5;
+    --paragraph: rgba(212, 248, 229, 0.85);
+  }
+}*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	/* 1 */
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	/* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box; /* 1 */
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Primary Color - Deep Teal */
+/* hsl(168, 100%, 21%) */
+/* Darker shade for accents */
+/* Secondary Color - Soft Green */
+/* Hover states */
+/* Active states */
+/* UI highlights over dark backgrounds */
+/* UI highlights over dark text */
+/* Backgrounds */
+/* Additional Secondary Colors */
+/* hsl(213, 56%, 47%) */
+/* hsl(353, 61%, 56%) */
+/* Positive Messages - Vibrant Green */
+/* hsl(134, 61%, 41%) */
+/* Background for positive states */
+/* Information Messages - Calm Blue */
+/* hsl(188, 71%, 41%) */
+/* Background for information messages */
+/* Warning Messages - Soft Amber */
+/* hsl(45, 100%, 50%) */
+/* Background for warnings */
+/* Critical Messages - Strong Red */
+/* hsl(354, 70%, 47%) */
+/* Background for critical states */
+/* Background only */
+:root {
+	--white: white;
+	--background: #f4fdf8;
+	--foreground: var(--white);
+	--border: rgba(0, 105, 62, 0.2);
+	--heading: #083629;
+	--paragraph: rgba(8, 54, 41, 0.8);
+	--accent-a1: #00693e;
+	--accent-b1: rgba(0, 105, 62, 0.07);
+	--accent-c1: rgba(0, 105, 62, 0.0509803922);
+	--accent-d1: #38b47c;
+	--accent-e1: rgba(0, 105, 62, 0.2);
+	--accent-f1: #e4f2e7;
+	--accent-g1: #0f2117;
+	--accent-h1: rgba(15, 33, 23, 0.6);
+	--accent-a2: #bc0087;
+	--accent-b2: rgba(188, 0, 135, 0.0705882353);
+	--accent-a3: #3959ff;
+	--accent-b3: rgba(57, 89, 255, 0.0705882353);
+	--accent-h3: rgba(20, 23, 24, 0.6);
+	--accent-a4: #eadb5b;
+	--font-sans: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1f18;
+    --foreground: #49514d;
+
+    --border: rgba(165, 255, 205, 0.15);
+    --heading: #d4f8e5;
+    --paragraph: rgba(212, 248, 229, 0.85);
+  }
+}*/
+/* -----------------------------------
+   Theme maps
+----------------------------------- */
+html {
+	font-family: "sans-serif";
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background-color: var(--background);
+	color: var(--paragraph);
+	font-family: var(--font-sans);
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 155%;
+	display: flex;
+}
+
+main {
+	padding-top: 9rem;
+	padding-bottom: 4.5rem;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+a {
+	text-decoration: underline;
+}
+
+h1 {
+	color: var(--heading);
+	letter-spacing: -0.05em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 4.12em;
+	font-weight: 700;
+	line-height: 110%;
+}
+@media screen and (max-width: 479px) {
+	h1 {
+		font-size: 2.4em;
+	}
+}
+@media screen and (max-width: 767px) {
+	h1 {
+		font-size: 3em;
+	}
+}
+@media screen and (max-width: 991px) {
+	h1 {
+		font-size: 3.5em;
+	}
+}
+
+h2 {
+	color: var(--heading);
+	letter-spacing: -0.05em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 3.12em;
+	font-weight: 700;
+	line-height: 115%;
+}
+@media screen and (max-width: 479px) {
+	h2 {
+		font-size: 1.9em;
+	}
+}
+@media screen and (max-width: 767px) {
+	h2 {
+		font-size: 2.3em;
+	}
+}
+@media screen and (max-width: 991px) {
+	h2 {
+		font-size: 2.7em;
+	}
+}
+
+h3 {
+	color: var(--heading);
+	letter-spacing: -0.05em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 2.37em;
+	font-weight: 700;
+	line-height: 120%;
+}
+@media screen and (max-width: 479px) {
+	h3 {
+		font-size: 1.6em;
+	}
+}
+@media screen and (max-width: 767px) {
+	h3 {
+		font-size: 1.8em;
+	}
+}
+@media screen and (max-width: 991px) {
+	h3 {
+		font-size: 2em;
+	}
+}
+
+h4 {
+	color: var(--heading);
+	letter-spacing: -0.05em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.75em;
+	font-weight: 700;
+	line-height: 125%;
+}
+@media screen and (max-width: 479px) {
+	h4 {
+		font-size: 1.3em;
+	}
+}
+@media screen and (max-width: 767px) {
+	h4 {
+		font-size: 1.4em;
+	}
+}
+@media screen and (max-width: 991px) {
+	h4 {
+		font-size: 1.6em;
+	}
+}
+
+h5 {
+	color: var(--heading);
+	letter-spacing: -0.05em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.37em;
+	font-weight: 700;
+	line-height: 128%;
+}
+@media screen and (max-width: 479px) {
+	h5 {
+		font-size: 1.15em;
+	}
+}
+@media screen and (max-width: 767px) {
+	h5 {
+		font-size: 1.2em;
+	}
+}
+@media screen and (max-width: 991px) {
+	h5 {
+		font-size: 1.25em;
+	}
+}
+
+h6 {
+	color: var(--heading);
+	letter-spacing: -0.02em;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1em;
+	font-weight: 600;
+	line-height: 140%;
+}
+
+.heading {
+	max-width: 9em;
+	margin-bottom: 0.5em;
+}
+
+.paragraph {
+	max-width: 30em;
+	margin-bottom: 2.2em;
+}
+
+.subtitle {
+	background-color: var(--white);
+	color: var(--heading);
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	border-radius: 0.6em;
+	margin-bottom: 0.7em;
+	padding: 0.5em 1em;
+	font-family: var(--font-mono);
+	font-size: 0.7em;
+	font-weight: 500;
+	line-height: 130%;
+	box-shadow: 0 10px 20px -10px var(--accent-c1);
+}
+.subtitle.white {
+	color: var(--white);
+	background-color: rgba(255, 255, 255, 0.1019607843);
+}
+.subtitle.green {
+	background-color: var(--accent-b1);
+	color: var(--accent-a1);
+}
+.subtitle.blue {
+	background-color: var(--accent-b3);
+	color: var(--accent-a3);
+}
+.subtitle.red {
+	background-color: var(--accent-b2);
+	color: var(--accent-a2);
+}
+
+.utility-page-wrap {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 3em 1em;
+	display: flex;
+}
+@media screen and (max-width: 479px) {
+	.utility-page-wrap {
+		padding-top: 2em;
+	}
+}
+
+.utility-page-content {
+	background-color: var(--foreground);
+	text-align: center;
+	border-radius: 0.87em;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 24em;
+	margin-bottom: 0;
+	padding: 3.1em;
+	display: flex;
+	box-shadow: 0 15px 25px -10px var(--accent-c1);
+}
+@media screen and (max-width: 479px) {
+	.utility-page-content {
+		padding: 2em;
+	}
+}
+
+.utility-page-form {
+	flex-direction: column;
+	align-items: stretch;
+	width: 100%;
+	margin-top: 0.8em;
+	display: flex;
+}
+
+.main {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+@media screen and (max-width: 479px) {
+	.main {
+		padding-top: 3em;
+	}
+}
+
+.content {
+	width: 100%;
+	max-width: 75em;
+}
+
+.content.narrow {
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	max-width: 60em;
+	display: flex;
+}
+
+.section {
+	justify-content: center;
+	align-items: center;
+	padding: 3.75em 2em;
+	/* display: flex; */
+}
+@media screen and (max-width: 767px) {
+	.section {
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+}
+@media screen and (max-width: 479px) {
+	.section {
+		padding: 2.5em 1.5em;
+	}
+}
+
+.visually-hidden-focusable {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.visually-hidden-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+}
+
+/* Primary Color - Deep Teal */
+/* hsl(168, 100%, 21%) */
+/* Darker shade for accents */
+/* Secondary Color - Soft Green */
+/* Hover states */
+/* Active states */
+/* UI highlights over dark backgrounds */
+/* UI highlights over dark text */
+/* Backgrounds */
+/* Additional Secondary Colors */
+/* hsl(213, 56%, 47%) */
+/* hsl(353, 61%, 56%) */
+/* Positive Messages - Vibrant Green */
+/* hsl(134, 61%, 41%) */
+/* Background for positive states */
+/* Information Messages - Calm Blue */
+/* hsl(188, 71%, 41%) */
+/* Background for information messages */
+/* Warning Messages - Soft Amber */
+/* hsl(45, 100%, 50%) */
+/* Background for warnings */
+/* Critical Messages - Strong Red */
+/* hsl(354, 70%, 47%) */
+/* Background for critical states */
+/* Background only */
+:root {
+	--white: white;
+	--background: #f4fdf8;
+	--foreground: var(--white);
+	--border: rgba(0, 105, 62, 0.2);
+	--heading: #083629;
+	--paragraph: rgba(8, 54, 41, 0.8);
+	--accent-a1: #00693e;
+	--accent-b1: rgba(0, 105, 62, 0.07);
+	--accent-c1: rgba(0, 105, 62, 0.0509803922);
+	--accent-d1: #38b47c;
+	--accent-e1: rgba(0, 105, 62, 0.2);
+	--accent-f1: #e4f2e7;
+	--accent-g1: #0f2117;
+	--accent-h1: rgba(15, 33, 23, 0.6);
+	--accent-a2: #bc0087;
+	--accent-b2: rgba(188, 0, 135, 0.0705882353);
+	--accent-a3: #3959ff;
+	--accent-b3: rgba(57, 89, 255, 0.0705882353);
+	--accent-h3: rgba(20, 23, 24, 0.6);
+	--accent-a4: #eadb5b;
+	--font-sans: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1f18;
+    --foreground: #49514d;
+
+    --border: rgba(165, 255, 205, 0.15);
+    --heading: #d4f8e5;
+    --paragraph: rgba(212, 248, 229, 0.85);
+  }
+}*/
+/* -----------------------------------
+   Theme maps
+----------------------------------- */
+.heading-account {
+	max-width: 9em;
+	margin-bottom: 0.3em;
+}
+.heading-account.white {
+	color: var(--white);
+}
+
+.paragraph-account {
+	max-width: 23em;
+	margin-bottom: 1.8em;
+}
+@media screen and (max-width: 479px) {
+	.paragraph-account {
+		margin-bottom: 1em;
+	}
+}
+.paragraph-account.white {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.text-account {
+	color: var(--accent-h1);
+	text-align: center;
+	width: 100%;
+	max-width: 32em;
+	margin-top: 1.4em;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0.87em;
+	line-height: 140%;
+}
+.text-account.white {
+	color: rgba(255, 255, 255, 0.5019607843);
+}
+
+.link-account {
+	color: var(--accent-h1);
+	transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.link-account:hover {
+	color: var(--accent-a1);
+}
+.link-account.white {
+	color: rgba(255, 255, 255, 0.5019607843);
+}
+.link-account.white:hover {
+	color: var(--white);
+}
+
+/* ----------------------------------
+   Tables
+---------------------------------- */
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.87rem;
+	background-color: var(--foreground);
+	color: var(--paragraph);
+	/* Prevent layout jump with long content */
+	table-layout: auto;
+}
+
+/* ----------------------------------
+   Head
+---------------------------------- */
+.table thead th {
+	text-align: center;
+	font-weight: 600;
+	font-size: 0.7rem;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	padding: 0.75rem 0.75rem;
+	white-space: nowrap;
+	color: var(--accent-g1);
+	background-color: var(--accent-f1);
+	border-bottom: 1px solid var(--border);
+}
+
+/* ----------------------------------
+   Body
+---------------------------------- */
+.table tbody td {
+	padding: 0.75rem;
+	vertical-align: middle;
+	border-bottom: 1px solid var(--border);
+}
+
+/* Remove final divider */
+.table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* ----------------------------------
+   Row states
+---------------------------------- */
+.table tbody tr {
+	transition: background-color 0.15s ease;
+}
+
+.table-hover tbody tr:hover {
+	background-color: var(--accent-b1);
+}
+
+/* Optional selected state */
+.table-selected tbody tr.is-selected {
+	background-color: var(--accent-b3);
+}
+
+/* ----------------------------------
+   Alignment helpers
+---------------------------------- */
+.table td.is-numeric,
+.table th.is-numeric {
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.table td.is-center,
+.table th.is-center {
+	text-align: center;
+}
+
+/* ----------------------------------
+   Bordered variant
+---------------------------------- */
+.table-bordered {
+	border: 1px solid var(--border);
+	border-radius: 0.75rem;
+	overflow: hidden;
+}
+
+.table-bordered thead th {
+	background-color: var(--accent-f1);
+}
+
+.table-bordered td,
+.table-bordered th {
+	border-right: 1px solid var(--border);
+}
+
+.table-bordered td:last-child,
+.table-bordered th:last-child {
+	border-right: none;
+}
+
+/* ----------------------------------
+   Dense variant
+---------------------------------- */
+.table-sm {
+	font-size: 0.7rem;
+}
+.table-sm thead th,
+.table-sm tbody td {
+	padding: 0.5rem 0.6rem;
+}
+
+/* ----------------------------------
+   Actions column
+---------------------------------- */
+.table .col-actions {
+	width: 1%;
+	white-space: nowrap;
+	text-align: right;
+}
+
+/*# sourceMappingURL=main.css.map */
