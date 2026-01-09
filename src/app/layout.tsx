@@ -1,4 +1,4 @@
-import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/styles/main.scss";
 import { Suspense, type ReactNode } from "react";
@@ -6,19 +6,6 @@ import { type Metadata } from "next";
 import { DraftModeNotification } from "@/ui/components/DraftModeNotification";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const spaceGrotesk = Space_Grotesk({
-	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	display: "swap",
-	style: ["normal", "italic"],
-});
 
 export const metadata: Metadata = {
 	title: "DigiDex Storefront",
@@ -32,8 +19,8 @@ export default function RootLayout(props: { children: ReactNode }) {
 	const { children } = props;
 
 	return (
-		<html lang="en" className="min-h-dvh">
-			<body className={`${inter.className} min-h-dvh`}>
+		<html lang="en">
+			<body>
 				{children}
 				<Suspense>
 					<DraftModeNotification />
