@@ -10,14 +10,19 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-COPY package.json pnpm-lock.yaml ./
+COPY saleor-storefront/package.json saleor-storefront/pnpm-lock.yaml ./
 RUN pnpm i --frozen-lockfile --prefer-offline
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+
+# Copy shared styles first
+COPY shared/styles ./src/styles
+
+# Copy storefront source
+COPY saleor-storefront/ .
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
