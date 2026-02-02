@@ -1,5 +1,18 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const config = {
+	// Turbopack config (Next.js 16 default)
+	turbopack: {
+		resolveAlias: {
+			// Map @/styles to the shared styles directory directly
+			"@/styles": path.resolve(__dirname, "../shared/styles"),
+		},
+	},
+
 	images: {
 		dangerouslyAllowLocalIP: true,
 		remotePatterns: [
@@ -16,6 +29,11 @@ const config = {
 			: process.env.NEXT_OUTPUT === "export"
 				? "export"
 				: undefined,
+
+	experimental: {
+		// Set the root to parent directory so symlinks to ../shared/styles are valid
+		outputFileTracingRoot: path.resolve(__dirname, ".."),
+	},
 };
 
 export default config;
