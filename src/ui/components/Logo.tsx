@@ -20,7 +20,7 @@ export const Logo = () => {
 	const pathname = usePathname();
 
 	if (pathname === "/") {
-		return { companyName };
+		return companyName;
 	}
 	return (
 		<LinkWithChannel aria-label="homepage" href="/">
