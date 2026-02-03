@@ -1,10 +1,11 @@
 import { getServerAuthClient } from "@/app/config";
+import "@/styles/components/LoginForm.scss";
 
 export async function LoginForm() {
 	return (
-		<div className="mx-auto mt-16 w-full max-w-lg">
+		<div className="login-wrapper">
 			<form
-				className="rounded border p-8 shadow-md"
+				className="login-card"
 				action={async (formData) => {
 					"use server";
 
@@ -25,19 +26,13 @@ export async function LoginForm() {
 					}
 				}}
 			>
-				<div className="mb-2">
+				<div className="login-field">
 					<label className="sr-only" htmlFor="email">
 						Email
 					</label>
-					<input
-						required
-						type="email"
-						name="email"
-						placeholder="Email"
-						className="w-full rounded border bg-neutral-50 px-4 py-2"
-					/>
+					<input required type="email" name="email" id="email" placeholder="Email" className="login-input" />
 				</div>
-				<div className="mb-4">
+				<div className="login-field">
 					<label className="sr-only" htmlFor="password">
 						Password
 					</label>
@@ -45,21 +40,18 @@ export async function LoginForm() {
 						required
 						type="password"
 						name="password"
+						id="password"
 						placeholder="Password"
 						autoCapitalize="off"
 						autoComplete="off"
-						className="w-full rounded border bg-neutral-50 px-4 py-2"
+						className="login-input"
 					/>
 				</div>
 
-				<button
-					className="rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700"
-					type="submit"
-				>
+				<button className="login-submit" type="submit">
 					Log In
 				</button>
 			</form>
-			<div></div>
 		</div>
 	);
 }

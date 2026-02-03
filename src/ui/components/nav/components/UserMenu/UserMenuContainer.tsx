@@ -3,6 +3,7 @@ import { UserMenu } from "./UserMenu";
 import { CurrentUserDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
+import "@/styles/components/NavComponents.scss";
 
 export async function UserMenuContainer() {
 	const { me: user } = await executeGraphQL(CurrentUserDocument, {
@@ -13,8 +14,8 @@ export async function UserMenuContainer() {
 		return <UserMenu user={user} />;
 	} else {
 		return (
-			<LinkWithChannel href="/login" className="h-6 w-6 flex-shrink-0">
-				<UserIcon className="h-6 w-6 shrink-0" aria-hidden="true" />
+			<LinkWithChannel href="/login" className="user-menu-login-link">
+				<UserIcon className="user-menu-icon" aria-hidden="true" />
 				<span className="sr-only">Log in</span>
 			</LinkWithChannel>
 		);

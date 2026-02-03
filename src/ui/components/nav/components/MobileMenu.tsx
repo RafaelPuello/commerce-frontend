@@ -6,6 +6,7 @@ import { Logo } from "../../Logo";
 import { useMobileMenu } from "./useMobileMenu";
 import { OpenButton } from "./OpenButton";
 import { CloseButton } from "./CloseButton";
+import "@/styles/components/NavComponents.scss";
 
 type Props = {
 	children: ReactNode;
@@ -19,32 +20,29 @@ export const MobileMenu = ({ children }: Props) => {
 			<OpenButton onClick={openMenu} aria-controls="mobile-menu" />
 			<Transition show={isOpen}>
 				<Dialog onClose={closeMenu}>
-					<Dialog.Panel className="fixed inset-0 z-20 flex h-dvh w-screen flex-col overflow-y-scroll bg-white">
+					<Dialog.Panel className="mobile-menu-panel">
 						<Transition.Child
-							className="sticky top-0 z-10 flex h-16 shrink-0 bg-white px-3 backdrop-blur-md sm:px-8"
-							enter="motion-safe:transition-all motion-safe:duration-150"
-							enterFrom="bg-transparent"
-							enterTo="bg-white"
-							leave="motion-safe:transition-all motion-safe:duration-150"
-							leaveFrom="bg-white"
-							leaveTo="bg-transparent"
+							className="mobile-menu-header"
+							enter="mobile-menu-transition-enter"
+							enterFrom="mobile-menu-transition-enter-from"
+							enterTo="mobile-menu-transition-enter-to"
+							leave="mobile-menu-transition-leave"
+							leaveFrom="mobile-menu-transition-leave-from"
+							leaveTo="mobile-menu-transition-leave-to"
 						>
 							<Logo />
 							<CloseButton onClick={closeMenu} aria-controls="mobile-menu" />
 						</Transition.Child>
 						<Transition.Child
 							as={Fragment}
-							enter="motion-safe:transition-all motion-safe:duration-150"
-							enterFrom="opacity-0 -translate-y-3 bg-transparent"
-							enterTo="opacity-100 translate-y-0 bg-white"
-							leave="motion-safe:transition-all motion-safe:duration-150"
-							leaveFrom="opacity-100 translate-y-0 bg-white"
-							leaveTo="opacity-0 -translate-y-3 bg-transparent"
+							enter="mobile-menu-content-enter"
+							enterFrom="mobile-menu-content-enter-from"
+							enterTo="mobile-menu-content-enter-to"
+							leave="mobile-menu-content-leave"
+							leaveFrom="mobile-menu-content-leave-from"
+							leaveTo="mobile-menu-content-leave-to"
 						>
-							<ul
-								className="flex h-full flex-col whitespace-nowrap p-3 pt-0 sm:p-8 sm:pt-0 [&>*:nth-child(n+3)]:border-t [&>*:nth-child(n+3)]:border-neutral-200 [&>li]:py-3"
-								id="mobile-menu"
-							>
+							<ul className="mobile-menu-list" id="mobile-menu">
 								{children}
 							</ul>
 						</Transition.Child>

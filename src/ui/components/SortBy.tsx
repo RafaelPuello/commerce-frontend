@@ -1,10 +1,10 @@
 "use client";
 
-import { Fragment } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Listbox, Transition } from "@headlessui/react";
+import { Listbox } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
+import "@/styles/components/SortBy.scss";
 
 const sortOptions = [
 	{ name: "A to Z", value: "name-asc" },
@@ -28,43 +28,34 @@ export const SortBy = () => {
 	};
 
 	return (
-		<div className="w-auto">
+		<div className="sort-by">
 			<Listbox value={currentSortValue} onChange={handleChange}>
-				<div className="relative mt-1">
-					<Listbox.Button className="relative w-full cursor-pointer bg-transparent py-2 pl-3 pr-10 text-left text-sm font-medium text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-300 sm:text-sm">
-						<span className="block truncate">{selectedOption.name}</span>
-						<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-							<ChevronDown className="h-4 w-4 text-neutral-500" aria-hidden="true" />
-						</span>
-					</Listbox.Button>
-					<Transition
-						as={Fragment}
-						leave="transition ease-in duration-100"
-						leaveFrom="opacity-100"
-						leaveTo="opacity-0"
-					>
-						<Listbox.Options className="absolute right-0 z-10 mt-1 max-h-60 w-max min-w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+				{({ open }) => (
+					<div className={clsx("sort-by-container", { "is-open": open })}>
+						<Listbox.Button className="sort-by-button">
+							<span className="sort-by-button-label">{selectedOption.name}</span>
+							<span className="sort-by-chevron">
+								<ChevronDown aria-hidden="true" />
+							</span>
+						</Listbox.Button>
+
+						<Listbox.Options className="sort-by-options">
 							{sortOptions.map((option) => (
 								<Listbox.Option
 									key={option.value}
-									className={({ active }) =>
-										clsx(
-											"relative cursor-default select-none py-2 pl-4 pr-4",
-											active ? "bg-neutral-100 text-neutral-900" : "text-neutral-700",
-										)
-									}
+									className={({ active }) => clsx("sort-by-option", { "is-active": active })}
 									value={option.value}
 								>
 									{({ selected }) => (
-										<span className={clsx("block truncate", selected ? "font-medium" : "font-normal")}>
+										<span className={clsx("sort-by-option-label", { "is-selected": selected })}>
 											{option.name}
 										</span>
 									)}
 								</Listbox.Option>
 							))}
 						</Listbox.Options>
-					</Transition>
-				</div>
+					</div>
+				)}
 			</Listbox>
 		</div>
 	);

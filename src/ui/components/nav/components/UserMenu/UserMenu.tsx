@@ -8,6 +8,7 @@ import { UserAvatar } from "./components/UserAvatar";
 import { type UserDetailsFragment } from "@/gql/graphql";
 import { logout } from "@/app/actions";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
+import "@/styles/components/NavComponents.scss";
 
 type Props = {
 	user: UserDetailsFragment;
@@ -15,48 +16,36 @@ type Props = {
 
 export function UserMenu({ user }: Props) {
 	return (
-		<Menu as="div" className="relative">
-			<Menu.Button className="relative flex rounded-full bg-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-800">
+		<Menu as="div" className="user-menu">
+			<Menu.Button className="user-menu-button">
 				<span className="sr-only">Open user menu</span>
 				<UserAvatar user={user} />
 			</Menu.Button>
 			<Transition
 				as={Fragment}
-				enter="transition ease-out duration-100"
-				enterFrom="transform opacity-0 scale-95"
-				enterTo="transform opacity-100 scale-100"
-				leave="transition ease-in duration-75"
-				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95"
+				enter="menu-transition-enter"
+				enterFrom="menu-transition-enter-from"
+				enterTo="menu-transition-enter-to"
+				leave="menu-transition-leave"
+				leaveFrom="menu-transition-leave-from"
+				leaveTo="menu-transition-leave-to"
 			>
-				<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right divide-y divide-neutral-200 bg-white py-1 text-start shadow ring-1 ring-neutral-200 ring-opacity-5 focus:outline-none">
+				<Menu.Items className="user-menu-dropdown">
 					<UserInfo user={user} />
-					<div className="flex flex-col px-1 py-1">
+					<div className="user-menu-section">
 						<Menu.Item>
 							{({ active }) => (
-								<LinkWithChannel
-									href="/orders"
-									className={clsx(
-										active && "bg-neutral-100",
-										"block px-4 py-2 text-sm font-medium text-neutral-500 hover:text-neutral-700",
-									)}
-								>
+								<LinkWithChannel href="/orders" className={clsx("user-menu-item", active && "is-active")}>
 									My orders
 								</LinkWithChannel>
 							)}
 						</Menu.Item>
 					</div>
-					<div className="flex flex-col px-1 py-1">
+					<div className="user-menu-section">
 						<Menu.Item>
 							{({ active }) => (
 								<form action={logout}>
-									<button
-										type="submit"
-										className={clsx(
-											active && "bg-neutral-100",
-											"block px-4 py-2 text-start text-sm font-medium text-neutral-500 hover:text-neutral-700",
-										)}
-									>
+									<button type="submit" className={clsx("user-menu-item", active && "is-active")}>
 										Log Out
 									</button>
 								</form>
