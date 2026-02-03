@@ -1,15 +1,29 @@
-import { Logo } from "./Logo";
-import { Nav } from "./nav/Nav";
+import { Suspense } from "react";
+import { NavBar } from "./nav/Nav";
+import { NavLinks } from "./nav/components/NavLinks";
+import { SearchBar } from "./nav/components/SearchBar";
+import { UserMenuContainer } from "./nav/components/UserMenu/UserMenuContainer";
+import { CartNavItem } from "./nav/components/CartNavItem";
 
 export function Header({ channel }: { channel: string }) {
 	return (
-		<header className="sticky top-0 z-20 bg-neutral-100/50 backdrop-blur-md">
-			<div className="mx-auto max-w-7xl px-3 sm:px-8">
-				<div className="flex h-16 justify-between gap-4 md:gap-8">
-					<Logo />
-					<Nav channel={channel} />
-				</div>
-			</div>
-		</header>
+		<NavBar>
+			<Suspense fallback={<div className="cs-li" />}>
+				<NavLinks channel={channel} />
+			</Suspense>
+			<li className="cs-li cs-search">
+				<SearchBar channel={channel} />
+			</li>
+			<li className="cs-li cs-user">
+				<Suspense fallback={<div className="nav-placeholder w-md" />}>
+					<UserMenuContainer />
+				</Suspense>
+			</li>
+			<li className="cs-li cs-cart">
+				<Suspense fallback={<div className="nav-placeholder w-sm" />}>
+					<CartNavItem channel={channel} />
+				</Suspense>
+			</li>
+		</NavBar>
 	);
 }
