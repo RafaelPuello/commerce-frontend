@@ -4,7 +4,7 @@ import { DeleteLineButton } from "./DeleteLineButton";
 import * as Checkout from "@/lib/checkout";
 import { formatMoney, getHrefForVariant } from "@/lib/utils";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
-import "@/styles/components/Cart.scss";
+import "@/styles/scss/components/Cart.scss";
 
 export const metadata = {
 	title: "Shopping Cart · Saleor Storefront example",
