@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import "@/styles/components/CategoryCollection.scss";
+import "@/styles/scss/components/CategoryCollection.scss";
 
 export interface CategoryItem {
 	id: string;

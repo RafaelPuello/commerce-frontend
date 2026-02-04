@@ -1,6 +1,6 @@
 import { XIcon } from "lucide-react";
 import { type HTMLAttributes } from "react";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 type Props = {
 	onClick: () => void;

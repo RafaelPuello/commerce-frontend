@@ -1,6 +1,6 @@
 import { AlertCircleIcon, CheckCircleIcon, ClockIcon, XCircle } from "lucide-react";
 import { PaymentChargeStatusEnum } from "@/gql/graphql";
-import "@/styles/components/PaymentStatus.scss";
+import "@/styles/scss/components/PaymentStatus.scss";
 
 type Props = {
 	status: PaymentChargeStatusEnum;

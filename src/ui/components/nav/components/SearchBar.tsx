@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { SearchIcon } from "lucide-react";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 export const SearchBar = ({ channel }: { channel: string }) => {
 	async function onSubmit(formData: FormData) {

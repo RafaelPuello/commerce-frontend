@@ -8,7 +8,7 @@ import { UserAvatar } from "./components/UserAvatar";
 import { type UserDetailsFragment } from "@/gql/graphql";
 import { logout } from "@/app/actions";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 type Props = {
 	user: UserDetailsFragment;

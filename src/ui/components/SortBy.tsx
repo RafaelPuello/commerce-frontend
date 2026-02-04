@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Listbox } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
-import "@/styles/components/SortBy.scss";
+import "@/styles/scss/components/SortBy.scss";
 
 const sortOptions = [
 	{ name: "A to Z", value: "name-asc" },

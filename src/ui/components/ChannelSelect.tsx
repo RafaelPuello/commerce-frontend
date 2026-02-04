@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import "@/styles/components/ChannelSelect.scss";
+import "@/styles/scss/components/ChannelSelect.scss";
 
 export const ChannelSelect = ({
 	channels,

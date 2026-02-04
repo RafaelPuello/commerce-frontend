@@ -3,7 +3,7 @@ import { LinkWithChannel } from "../atoms/LinkWithChannel";
 import { formatDate, formatMoney, getHrefForVariant } from "@/lib/utils";
 import { type OrderDetailsFragment } from "@/gql/graphql";
 import { PaymentStatus } from "@/ui/components/PaymentStatus";
-import "@/styles/components/Orders.scss";
+import "@/styles/scss/components/Orders.scss";
 
 type Props = {
 	order: OrderDetailsFragment;

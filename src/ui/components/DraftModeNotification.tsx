@@ -1,6 +1,6 @@
 import { draftMode } from "next/headers";
 import Link from "next/link";
-import "@/styles/components/DraftMode.scss";
+import "@/styles/scss/components/DraftMode.scss";
 
 export const DraftModeNotification = async () => {
 	if (!(await draftMode()).isEnabled) {

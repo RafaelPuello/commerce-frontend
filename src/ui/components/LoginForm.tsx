@@ -1,5 +1,5 @@
 import { getServerAuthClient } from "@/app/config";
-import "@/styles/components/LoginForm.scss";
+import "@/styles/scss/components/LoginForm.scss";
 
 export async function LoginForm() {
 	return (

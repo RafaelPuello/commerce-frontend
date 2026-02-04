@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { type UserDetailsFragment } from "@/gql/graphql";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 type Props = {
 	user: UserDetailsFragment;

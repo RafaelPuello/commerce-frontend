@@ -6,7 +6,7 @@ import { Logo } from "../../Logo";
 import { useMobileMenu } from "./useMobileMenu";
 import { OpenButton } from "./OpenButton";
 import { CloseButton } from "./CloseButton";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 type Props = {
 	children: ReactNode;

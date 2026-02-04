@@ -2,7 +2,7 @@ import { ShoppingBagIcon } from "lucide-react";
 import clsx from "clsx";
 import * as Checkout from "@/lib/checkout";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
-import "@/styles/components/NavComponents.scss";
+import "@/styles/scss/components/NavComponents.scss";
 
 export const CartNavItem = async ({ channel }: { channel: string }) => {
 	const checkoutId = await Checkout.getIdFromCookies(channel);

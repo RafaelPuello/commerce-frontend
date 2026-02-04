@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { LinkWithChannel } from "../atoms/LinkWithChannel";
 import { type ProductListItemFragment, type VariantDetailsFragment } from "@/gql/graphql";
 import { getHrefForVariant } from "@/lib/utils";
-import "@/styles/components/Products.scss";
+import "@/styles/scss/components/Products.scss";
 
 export function VariantSelector({
 	variants,
