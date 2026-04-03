@@ -2,6 +2,7 @@
 gql/
 
 .env
+.env.*.secret
 
 # dependencies
 /node_modules

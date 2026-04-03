@@ -1,16 +1,13 @@
-version: "3"
-
 services:
   saleor-storefront:
     container_name: saleor-storefront
     build:
       context: ..
-      dockerfile: saleor-storefront/Dockerfile
+      dockerfile: storefront/Dockerfile
       args:
         NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://api.localhost:10000/graphql/}
         NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://storefront.localhost:10000}
-        NEXT_PUBLIC_DEFAULT_CHANNEL: ${NEXT_PUBLIC_DEFAULT_CHANNEL:-default-channel}
-    restart: always
+    restart: unless-stopped
     networks:
       - digidex-net
     labels:
