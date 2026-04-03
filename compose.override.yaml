@@ -1,0 +1,16 @@
+services:
+  saleor-storefront:
+    build:
+      args:
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://localhost:10000/graphql/}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://localhost:10000/shop}
+    labels:
+      - "traefik.enable=true"
+      # Development: path-based routing at /shop
+      - "traefik.http.routers.storefront.rule=PathPrefix(`/shop`)"
+      - "traefik.http.routers.storefront.entrypoints=web"
+      - "traefik.http.routers.storefront.priority=50"
+      # Strip the /shop prefix before forwarding to the app
+      - "traefik.http.middlewares.storefront-stripprefix.stripprefix.prefixes=/shop"
+      - "traefik.http.routers.storefront.middlewares=storefront-stripprefix"
+      - "traefik.http.services.storefront.loadbalancer.server.port=3000"
