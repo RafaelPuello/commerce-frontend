@@ -2,7 +2,7 @@ services:
   saleor-storefront:
     build:
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://localhost:10000/graphql/}
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://localhost:3000/graphql/}
         NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://localhost:10000/shop}
     labels:
       - "traefik.enable=true"
