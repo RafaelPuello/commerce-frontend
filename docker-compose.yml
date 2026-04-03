@@ -7,16 +7,18 @@ services:
       context: ..
       dockerfile: saleor-storefront/Dockerfile
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL}
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://api.localhost:10000/graphql/}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://storefront.localhost:10000}
+        NEXT_PUBLIC_DEFAULT_CHANNEL: ${NEXT_PUBLIC_DEFAULT_CHANNEL:-default-channel}
     restart: always
-    ports:
-      - 3000:3000
     networks:
-      - saleor_network
-
-  # Add more containers below (nginx, postgres, etc.)
+      - digidex-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.storefront.rule=Host(`storefront.localhost`)"
+      - "traefik.http.routers.storefront.entrypoints=web"
+      - "traefik.http.services.storefront.loadbalancer.server.port=3000"
 
 networks:
-  saleor_network:
-    external: false
+  digidex-net:
+    external: true
