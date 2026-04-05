@@ -6,13 +6,14 @@ services:
       dockerfile: storefront/Dockerfile
       args:
         NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-https://api.digidex.bio/graphql/}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-https://shop.digidex.bio}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-https://digidex.bio/shop}
     restart: unless-stopped
     networks:
       - digidex-net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.storefront.rule=Host(`shop.digidex.bio`)"
+      - "traefik.http.routers.storefront.rule=Host(`digidex.bio`) && PathPrefix(`/shop`)"
+      - "traefik.http.routers.storefront.priority=100"
       - "traefik.http.routers.storefront.entrypoints=websecure"
       - "traefik.http.routers.storefront.tls=true"
       - "traefik.http.routers.storefront.tls.certresolver=le"

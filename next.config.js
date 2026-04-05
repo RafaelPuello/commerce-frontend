@@ -5,6 +5,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const config = {
+	// Storefront is served under /shop path prefix
+	// All assets and routes are prefixed with /shop
+	basePath: "/shop",
+
 	// Turbopack config (Next.js 16 default)
 	turbopack: {
 		resolveAlias: {
