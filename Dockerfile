@@ -10,7 +10,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-COPY saleor-storefront/package.json saleor-storefront/pnpm-lock.yaml ./
+COPY storefront/package.json storefront/pnpm-lock.yaml ./
 RUN pnpm i --frozen-lockfile --prefer-offline
 
 # Rebuild the source code only when needed
@@ -19,7 +19,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 
 # Copy storefront source
-COPY saleor-storefront/ .
+COPY storefront/ .
 
 # Copy shared styles
 COPY shared/styles /app/src/styles
@@ -68,10 +68,16 @@ RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
+#
+# NOTE: outputFileTracingRoot is set to the monorepo root in next.config.js,
+# so the standalone output mirrors the builder's full path structure.
+# server.js ends up at .next/standalone/app/server.js (not .next/standalone/server.js).
+# After COPY, server.js is at /app/app/server.js in the runner.
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./app/.next/static
 
 USER nextjs
 
+WORKDIR /app/app
 
 CMD ["node", "server.js"]

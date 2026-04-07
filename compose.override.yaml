@@ -2,14 +2,20 @@ services:
   saleor-storefront:
     build:
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://localhost:3000/graphql/}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://localhost:10000/shop}
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://10.0.0.218:8000/graphql/}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://10.0.0.218:10000/shop}
     labels:
       - "traefik.enable=true"
       # Development: path-based routing at /shop
       # Traefik forwards full /shop/* path to Next.js (no stripping)
       # Next.js basePath: '/shop' in next.config.js handles the path prefix
-      - "traefik.http.routers.storefront.rule=Host(`localhost`) && PathPrefix(`/shop`) || Host(`10.0.0.218`) && PathPrefix(`/shop`)"
+      - "traefik.http.routers.storefront.rule=(Host(`localhost`) || Host(`10.0.0.218`)) && PathPrefix(`/shop`)"
       - "traefik.http.routers.storefront.entrypoints=web"
       - "traefik.http.routers.storefront.priority=50"
+      - "traefik.http.routers.storefront.tls=false"
+      - "traefik.http.routers.storefront.tls.certresolver="
       - "traefik.http.services.storefront.loadbalancer.server.port=3000"
+
+networks:
+  digidex-net:
+    external: true
