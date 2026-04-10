@@ -4,6 +4,7 @@ services:
       args:
         NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://10.0.0.218:8000/graphql/}
         NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://10.0.0.218:10000/shop}
+        NEXT_PUBLIC_DEFAULT_CHANNEL: ${NEXT_PUBLIC_DEFAULT_CHANNEL:-default-channel}
     labels:
       - "traefik.enable=true"
       # Development: path-based routing at /shop
