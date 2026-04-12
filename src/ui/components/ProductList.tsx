@@ -1,6 +1,6 @@
 import { ProductElement } from "./ProductElement";
 import { type ProductListItemFragment } from "@/gql/graphql";
-import "@/styles/scss/components/Products.scss";
+import "@/styles/scss/components/_products.scss";
 
 export const ProductList = ({ products }: { products: readonly ProductListItemFragment[] }) => {
 	return (

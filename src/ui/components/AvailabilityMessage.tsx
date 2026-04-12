@@ -1,5 +1,5 @@
 import { XIcon } from "lucide-react";
-import "@/styles/scss/components/Products.scss";
+import "@/styles/scss/components/_products.scss";
 
 type Props = {
 	isAvailable: boolean;

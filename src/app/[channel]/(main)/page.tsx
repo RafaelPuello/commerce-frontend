@@ -1,7 +1,7 @@
 import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { ProductList } from "@/ui/components/ProductList";
-import "@/styles/scss/components/Products.scss";
+import "@/styles/scss/components/_products.scss";
 
 export const metadata = {
 	title: "DigiDex Storefront",

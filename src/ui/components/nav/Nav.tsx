@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
-import "@/styles/scss/components/NavBar.scss";
+import "@/styles/scss/components/_navigation.scss";
 
 type NavBarProps = {
 	children: ReactNode;

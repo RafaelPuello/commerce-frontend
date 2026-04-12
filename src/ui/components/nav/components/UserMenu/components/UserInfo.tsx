@@ -1,5 +1,5 @@
 import { type UserDetailsFragment } from "@/gql/graphql";
-import "@/styles/scss/components/NavComponents.scss";
+import "@/styles/scss/components/_nav-components.scss";
 
 type Props = {
 	user: UserDetailsFragment;

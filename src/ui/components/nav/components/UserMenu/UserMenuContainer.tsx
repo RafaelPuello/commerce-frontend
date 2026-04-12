@@ -3,7 +3,7 @@ import { UserMenu } from "./UserMenu";
 import { CurrentUserDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { LinkWithChannel } from "@/ui/atoms/LinkWithChannel";
-import "@/styles/scss/components/NavComponents.scss";
+import "@/styles/scss/components/_nav-components.scss";
 
 export async function UserMenuContainer() {
 	const { me: user } = await executeGraphQL(CurrentUserDocument, {

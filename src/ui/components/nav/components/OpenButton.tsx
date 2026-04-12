@@ -1,6 +1,6 @@
 import { MenuIcon } from "lucide-react";
 import { type HTMLAttributes } from "react";
-import "@/styles/scss/components/NavComponents.scss";
+import "@/styles/scss/components/_nav-components.scss";
 
 type Props = {
 	onClick: () => void;

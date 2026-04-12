@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import "@/styles/scss/components/Pagination.scss";
+import "@/styles/scss/components/_pagination.scss";
 
 export function Pagination({
 	pageInfo,
