@@ -1,10 +1,16 @@
 services:
   saleor-storefront:
     build:
+      network: host
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://api.digidex.lan/graphql/}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://digidex.lan/shop}
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://api.digidex.lan:10000/graphql/}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://digidex.lan:10000/shop}
         NEXT_PUBLIC_DEFAULT_CHANNEL: ${NEXT_PUBLIC_DEFAULT_CHANNEL:-default-channel}
+    extra_hosts:
+      # Allows SSR server-side fetches to reach Traefik (api.digidex.lan resolves
+      # to loopback inside Docker; this maps it to the Traefik container IP on digidex-net).
+      # Verify with: docker inspect proxy | grep -i ipaddress
+      - "api.digidex.lan:172.27.0.4"
     labels:
       - "traefik.enable=true"
       # Development: path-based routing at /shop
