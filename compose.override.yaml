@@ -3,20 +3,15 @@ services:
     build:
       network: host
       args:
-        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://api.digidex.lan:10000/graphql/}
-        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://digidex.lan:10000/shop}
+        NEXT_PUBLIC_SALEOR_API_URL: ${NEXT_PUBLIC_SALEOR_API_URL:-http://10.0.0.218:10000/graphql/}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-http://10.0.0.218:10000/shop}
         NEXT_PUBLIC_DEFAULT_CHANNEL: ${NEXT_PUBLIC_DEFAULT_CHANNEL:-default-channel}
-    extra_hosts:
-      # Allows SSR server-side fetches to reach Traefik (api.digidex.lan resolves
-      # to loopback inside Docker; this maps it to the Traefik container IP on digidex-net).
-      # Verify with: docker inspect proxy | grep -i ipaddress
-      - "api.digidex.lan:172.27.0.4"
     labels:
       - "traefik.enable=true"
       # Development: path-based routing at /shop
       # Traefik forwards full /shop/* path to Next.js (no stripping)
       # Next.js basePath: '/shop' in next.config.js handles the path prefix
-      - "traefik.http.routers.storefront.rule=Host(`digidex.lan`) && PathPrefix(`/shop`)"
+      - "traefik.http.routers.storefront.rule=Host(`10.0.0.218`) && PathPrefix(`/shop`)"
       - "traefik.http.routers.storefront.entrypoints=web"
       - "traefik.http.routers.storefront.priority=50"
       - "traefik.http.routers.storefront.tls=false"
